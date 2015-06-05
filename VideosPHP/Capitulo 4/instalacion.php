@@ -35,7 +35,8 @@
 
          $consulta  =
 			"INSERT INTO favoritos VALUES ('ximena','andres','Google','http://www.google.com','Tecnologia','Buscador famoso',10);
-		     INSERT INTO favoritos VALUES ('ximena','andres',YouTube,'http://www.youtube.com','Tecnologia','Pagina de Musica',10);
+		     INSERT INTO favoritos VALUES ('ximena','andres','youtube','http://www.youtube.com','Tecnologia','Reproductor famoso',10);
+		     INSERT INTO favoritos VALUES ('ximena','andres','Gmail','http://www.gmail.com','Tecnologia','Correo electronico famoso',10);
 			";
 	//insertar
 			$resultado = $conexion -> exec ($consulta);
