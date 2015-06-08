@@ -15,11 +15,10 @@
 	$conexion = new PDO('sqlite:favoritos.db');
 
 	
-	$consulta = "SELECT * FROM favoritos WHERE usuario='".$usuario.
-	"' AND contrasena='".$contrasena."' AND categoria='".$categoria.
-	"' AND comentario='".$comentario."' AND valoracion='".$valoracion."'";
+	$consulta = "SELECT * FROM favoritos WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND titulo='".$titulo."' 
+	AND direccion='".$direccion."' AND categoria='".$categoria."' AND comentario='".$comentario."' AND valoracion='".$valoracion."'";
 
-	$resultado = $conexion-> exec($consulta);
+	$resultado = $conexion-> query($consulta);
 
 	echo "
 
@@ -39,7 +38,7 @@
 		echo "
 
 		<tr>
-			<form action='actualizarfavorito' method='POST'>
+			<form action='actualizarfavorito.php' method='POST'>
 
 				<td><input type='text' name='titulo' value='".$fila['titulo']."'></td>
 				<td><input type='text' name='direccion' value='".$fila['direccion']."'></td>
@@ -64,6 +63,10 @@
 
 		";
 	}
+
+	echo "</table>";
+
+	$_SESSION['titulo'] = $titulo;
 
 	$conexion=NULL;
 

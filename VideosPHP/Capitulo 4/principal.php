@@ -11,7 +11,9 @@
 
 	//Establecer consulta
 
-	$consulta = "SELECT * FROM favoritos WHERE usuario='ximena' AND contrasena='andres'";
+	$consulta = "SELECT * FROM favoritos 
+	WHERE usuario='".$_SESSION['usuario']."' 
+	AND contrasena='".$_SESSION['contrasena']."'";
 
 
 	$resultado = $conexion -> query($consulta);
