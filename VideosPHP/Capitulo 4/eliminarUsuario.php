@@ -13,7 +13,7 @@
 	$apellido = $_GET['apellido'];
 	$edad = $_GET['edad'];
 
-	$consulta = "DELETE FROM usuario WHERE usuario='".$usuario.
+	$consulta = "DELETE FROM usuarios WHERE usuario='".$usuario.
 	"' AND contrasena='".$contrasena."' AND nombre='".$nombre.
 	"'AND apellido='".$apellido."' AND edad='".$edad."' ";
 

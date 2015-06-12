@@ -1,6 +1,6 @@
 <?php
-
-	session_start();
+	
+	include("log.php");
 
 	echo "Tu usuario es: ".$_SESSION['usuario']."<br/>";
 	echo "Tu contrasenia es: ".$_SESSION['contrasena'];
@@ -76,4 +76,49 @@
 
 	$conexion = NULL;
 
+
+////////////Socializo////////////////////////////////////////////////////////////////////////
+function verCategoria($dameCategoria){
+
+	echo "<br/>";
+
+	echo "Algunos Links de la categoria ".$dameCategoria." que quizas te puedan interesar <br/><br/>";
+
+	$conexion = new PDO('sqlite:favoritos.db');
+
+	$consulta = "SELECT * FROM favoritos WHERE usuario != '"
+	.$_SESSION['usuario']."' AND categoria='".$dameCategoria."' ORDER BY RANDOM() LIMIT 3";
+
+	$resultado = $conexion-> query($consulta);
+
+	echo "
+	<table border=1 width=1>
+		<tr>
+		   <td>Titulo</td>
+		   <td>Direccion</td>
+		   <td>Categoria</td>
+		   <td>Comentario</td>
+		   <td>Valoracion</td>
+		 </tr>
+	
+	";
+
+	foreach ( $resultado as $fila )	{
+
+		echo "<tr><td>".$fila['titulo']."</td><td>".$fila['direccion']."</td><td>".
+		$fila['categoria']."</td><td>".$fila['comentario']."</td><td>".$fila['valoracion']."</td></tr>";
+	}
+
+	echo "</table>";
+	$conexion = NULL;
+
+}
+
+
+verCategoria("salud");
+verCategoria("trabajo");
+verCategoria("hobby");
+verCategoria("personal");
+verCategoria("otros");
+	
 ?>

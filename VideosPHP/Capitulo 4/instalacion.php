@@ -54,7 +54,7 @@
 		//crear tabla
 
 			$consulta ='
-				CREATE TABLE usuario(
+				CREATE TABLE usuarios(
 
 				usuario Char(40) NOT NULL,
 				contrasena Char(40) NOT NULL,
@@ -75,7 +75,7 @@
 	//Preparar
 
          $consulta  =
-			"INSERT INTO usuario VALUES ('ximena','andres','Ximena','Valero',18,1);
+			"INSERT INTO usuarios VALUES ('ximena','andres','Ximena','Valero',18,1);
 		    ";
 	//insertar
 			$resultado = $conexion -> exec ($consulta);
@@ -88,8 +88,7 @@
 
 		//CREAR UNA TABLA DE LOGS
 
-		//CONEXION
-			$conexion = new PDO('sqlite:favoritos.db') or die('Ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('Ha sido imposible establecer la conexion');
 
 		//crear tabla
 
@@ -107,12 +106,12 @@
 				navegador Char(100),
 				usuario Char(40),
 				contrasena Char(40),
-				
 			)';
 
 		$resultado = $conexion -> exec($consulta);
 		$conexion=NULL;
 
+			
 //CONTENIDO DE PRUEBA PARA LA TABLA USUARIOS
 	//Establecer
 

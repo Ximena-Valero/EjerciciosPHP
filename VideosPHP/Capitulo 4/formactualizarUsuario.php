@@ -15,7 +15,7 @@
 	$conexion = new PDO('sqlite:favoritos.db');
 
 	
-	$consulta = "SELECT * FROM usuario WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND nombre='".$nombre."'AND apellido='".$apellido."' AND edad='".$edad."' ";
+	$consulta = "SELECT * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND nombre='".$nombre."'AND apellido='".$apellido."' AND edad='".$edad."' ";
 
 	$resultado = $conexion-> query($consulta);
 

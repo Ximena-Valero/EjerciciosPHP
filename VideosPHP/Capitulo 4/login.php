@@ -10,7 +10,7 @@
 	//conexion
 	$conexion = new PDO('sqlite:favoritos.db');
 
-	$consulta = "SELECT * FROM usuario";
+	$consulta = "SELECT * FROM usuarios";
 
 	$resultado = $conexion-> query($consulta);
 
@@ -18,7 +18,7 @@
 
 		$user = $fila['usuario'];
 		$password = $fila['contrasena'];
-		$permisosbd = $fila['permisosbd'];
+		$permisosbd = $fila['permisos'];
 
 
 		if ($usuario==$user & $contrasena == $password) {
