@@ -5,6 +5,8 @@
 	echo "Tu usuario es: ".$_SESSION['usuario']."<br/>";
 	echo "Tu contrasenia es: ".$_SESSION['contrasena'];
 
+	echo "<br><br>Pulsa <a href='unlog.php'>Aqui</a> para cerrar tu sesion<br>";
+
 	//Crear conexion
 
 	$conexion = new PDO('sqlite:favoritos.db') or die('Ha sido imposible establecer la conexion');
